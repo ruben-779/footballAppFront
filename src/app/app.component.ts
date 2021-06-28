@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'footballApp';
+}
+export interface Players {
+  id: string,
+  "Nombre del Jugador": string,
+  teamId: string,
+  Avatar: string
+}
+
+export interface Teams {
+  id: string,
+  "Nombre del equipo": string,
+  "Logo del Equipo": string,
+  Liga: string
 }
