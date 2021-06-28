@@ -1,0 +1,8 @@
+<p>leagues works!</p>
+<div *ngFor="let league of leagues">
+  <div>{{ league["Nombre De La Liga"] }}</div>
+  <img [src]="league['Logo de la Liga']" alt="" />
+  <button routerLink="/teams/{{ league.Identificador }}">
+    Mostrar equipos de la Liga
+  </button>
+</div>
