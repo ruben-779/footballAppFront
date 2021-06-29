@@ -4,6 +4,8 @@ import { CreatePlayerComponent } from './create-player/create-player.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { PlayersComponent } from './players/players.component';
+import { QueryPlayersByTeamComponent } from './query-players-by-team/query-players-by-team.component';
+import { QueryPlayersComponent } from './query-players/query-players.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ViewPlayerComponent } from './views/view-player/view-player.component';
 import { ViewPlayersTeamComponent } from './views/view-players-team/view-players-team.component';
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: "players/:teamId", component: ViewPlayersTeamComponent },
   { path: "teams/:leagueId", component: ViewTeamsLeagueComponent },
   { path: "createTeam", component: CreateTeamComponent },
-  { path: "createPlayer", component: CreatePlayerComponent }
+  { path: "createPlayer", component: CreatePlayerComponent },
+  { path: "query/:name", component: QueryPlayersComponent },
+  { path: "querybyteam/:team", component: QueryPlayersByTeamComponent }
 ];
 
 @NgModule({

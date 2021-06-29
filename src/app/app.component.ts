@@ -9,6 +9,8 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
 
   title = 'footballApp';
+  teamQuery: string = ""
+  nameQuery: string = ""
 
   items: MenuItem[] = [];
   ngOnInit() {
@@ -16,8 +18,8 @@ export class AppComponent {
       { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: "/" },
       { label: 'Teams', icon: 'pi pi-fw pi-shield', routerLink: "/teams" },
       { label: 'Players', icon: 'pi pi-fw pi-android', routerLink: "/players" },
-      { label: 'Añadir jugador', icon: 'pi pi-fw pi-android', routerLink: "/createPlayer" },
-      { label: 'Añadir Equipo', icon: 'pi pi-fw pi-shield', routerLink: "/createTeam" },
+      { label: 'Añadir jugador', icon: 'pi pi-fw pi-plus', routerLink: "/createPlayer" },
+      { label: 'Añadir Equipo', icon: 'pi pi-fw pi-plus-circle', routerLink: "/createTeam" },
 
     ];
   }

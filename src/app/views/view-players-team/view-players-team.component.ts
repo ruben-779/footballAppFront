@@ -12,7 +12,7 @@ export class ViewPlayersTeamComponent implements OnInit {
   teamId: any = this.route.snapshot.paramMap.get("teamId")
   players: Players[] = []
   cButton: boolean = false
-  newPlayer: any = {
+  newPlayer: Players = {
     id: "",
     teamId: this.teamId,
     "Nombre del Jugador": "",

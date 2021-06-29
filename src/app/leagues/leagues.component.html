@@ -1,3 +1,40 @@
+<div class="container">
+  <div class="p-col-12 p-md-4">
+    <div class="p-inputgroup">
+      <button
+        type="button"
+        routerLink="query/{{ nameQuery }}"
+        pButton
+        pRipple
+        label="Buscar"
+      ></button>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="nameQuery"
+        placeholder="Buscar por nombre de jugador"
+      />
+    </div>
+  </div>
+  <div class="p-col-12 p-md-4">
+    <div class="p-inputgroup">
+      <button
+        type="button"
+        routerLink="querybyteam/{{ teamQuery }}"
+        pButton
+        pRipple
+        label="Buscar"
+      ></button>
+      <input
+        type="text"
+        pInputText
+        [(ngModel)]="teamQuery"
+        placeholder="Buscar por nombre del equipo"
+      />
+    </div>
+  </div>
+</div>
+
 <h1>Ligas de Futbol</h1>
 <div class="wrap">
   <p-card

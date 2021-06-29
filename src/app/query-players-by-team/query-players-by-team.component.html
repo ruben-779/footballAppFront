@@ -1,0 +1,22 @@
+<h1>Jugadores del equipo</h1>
+<div *ngIf="error == true">
+  <p-message severity="error" text="Equipo no encontrado"></p-message>
+</div>
+<div class="wrap">
+  <p-card
+    [header]="player['Nombre del Jugador']"
+    [style]="{ width: '260px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+    *ngFor="let player of players"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="player.Avatar" />
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Mostrar mas..."
+        routerLink="/player/{{ player.id }}"
+      ></p-button>
+    </ng-template>
+  </p-card>
+</div>

@@ -20,6 +20,10 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
 import { CreatePlayerComponent } from './create-player/create-player.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
+import { QueryPlayersComponent } from './query-players/query-players.component';
+import { QueryPlayersByTeamComponent } from './query-players-by-team/query-players-by-team.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,9 @@ import { CreateTeamComponent } from './create-team/create-team.component';
     ViewPlayersTeamComponent,
     ViewTeamsLeagueComponent,
     CreatePlayerComponent,
-    CreateTeamComponent
+    CreateTeamComponent,
+    QueryPlayersComponent,
+    QueryPlayersByTeamComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,9 @@ import { CreateTeamComponent } from './create-team/create-team.component';
     TabMenuModule,
     SharedModule,
     FormsModule,
+    MessageModule,
+    MessagesModule
+
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],

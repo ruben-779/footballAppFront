@@ -10,6 +10,8 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./leagues.component.css']
 })
 export class LeaguesComponent implements OnInit {
+  teamQuery: string = ""
+  nameQuery: string = ""
   leagues: Leagues[] = []
   constructor(private leaguesService: LeaguesService, private primengConfig: PrimeNGConfig) {
     this.leaguesService.getLeagues().then(res => this.leagues = res)

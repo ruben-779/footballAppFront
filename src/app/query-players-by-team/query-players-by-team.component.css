@@ -3,12 +3,17 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+p-card {
+  margin: 10px;
+  box-shadow: 3px, 3px 8px black;
+}
+
 h1 {
   color: white;
   text-align: center;
 }
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+
+h2 {
+  color: red;
+  text-align: center;
 }
