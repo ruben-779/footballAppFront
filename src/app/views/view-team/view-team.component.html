@@ -16,4 +16,43 @@
       ></p-button>
     </ng-template>
   </p-card>
+  <p-card header="Editar Jugador" styleClass="p-card-shadow">
+    <div class="input">
+      <label for="firstname6">Nombre</label>
+      <input
+        id="firstname6"
+        type="text"
+        [(ngModel)]="team['Nombre del equipo']"
+        pInputText
+      />
+    </div>
+    <div class="input">
+      <label for="lastname6">Avatar</label>
+      <input
+        id="lastname6"
+        type="text"
+        [(ngModel)]="team['Logo del Equipo']"
+        pInputText
+      />
+    </div>
+    <div>
+      <label for="lastname6">Traspasalo de liga</label>
+      <select [(ngModel)]="leagueName" name="Selecciona el equipo" id="">
+        <option
+          *ngFor="let league of leagues"
+          [value]="league['Nombre De La Liga']"
+        >
+          <p>{{ league["Nombre De La Liga"] }}</p>
+        </option>
+      </select>
+    </div>
+    <p></p>
+    <p-button label="Guardar" (click)="editTeam()"></p-button>
+    <p></p>
+    <p-button
+      label="Borrar equipo y sus jugadores"
+      (click)="deleteTeam()"
+      routerLink="/"
+    ></p-button>
+  </p-card>
 </div>

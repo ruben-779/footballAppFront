@@ -32,6 +32,9 @@ export class ViewPlayerComponent implements OnInit {
     ).catch(err => console.log(err))
   }
 
+  deletePlayer() {
+    this.playersService.deletePlayer(this.player.id).then(res => console.log("Eliminado")).catch(err => console.log(err))
+  }
   constructor(private playersService: PlayersService, private teamsService: TeamsService, private route: ActivatedRoute) {
     this.playersService.getByid(this.route.snapshot.paramMap.get("id") as string).then(res => {
 
