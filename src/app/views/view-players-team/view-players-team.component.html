@@ -2,12 +2,19 @@
 <p-button label="Añadir jugador al equipo" (click)="createButton()"></p-button>
 <div *ngIf="cButton == true">
   <input
-    class="inputForm"
     type="text"
     [value]="newPlayer['Nombre del Jugador']"
     [(ngModel)]="newPlayer['Nombre del Jugador']"
-    placeholder="John Doe"
+    placeholder="Inserta el nombre"
   />
+  <input
+    type="text"
+    [value]="newPlayer.avatar"
+    [(ngModel)]="newPlayer.Avatar"
+    placeholder="Inserta la Url de la foto"
+  />
+  <p-button label="Guardar" (click)="createPlayer()"></p-button>
+  <p>{{ newPlayer["Nombre del Jugador"] }}</p>
 </div>
 <div class="wrap">
   <p-card

@@ -10,4 +10,36 @@
     </ng-template>
     <ng-template pTemplate="footer"> </ng-template>
   </p-card>
+
+  <p-card header="Editar Jugador" styleClass="p-card-shadow">
+    <div class="input">
+      <label for="firstname6">Nombre</label>
+      <input
+        id="firstname6"
+        type="text"
+        [(ngModel)]="player['Nombre del Jugador']"
+        pInputText
+      />
+    </div>
+    <div class="input">
+      <label for="lastname6">Avatar</label>
+      <input
+        id="lastname6"
+        type="text"
+        [(ngModel)]="player.Avatar"
+        pInputText
+      />
+    </div>
+    <div>
+      <h4>El equipo actual es {{ actualTeam }}</h4>
+      <label for="lastname6">Traspasalo de equipo</label>
+      <select [(ngModel)]="teamName" name="Selecciona el equipo" id="">
+        <option *ngFor="let team of teams" [value]="team['Nombre del equipo']">
+          <p>{{ team["Nombre del equipo"] }}</p>
+        </option>
+      </select>
+    </div>
+    <p></p>
+    <p-button label="Guardar" (click)="editPlayer()"></p-button>
+  </p-card>
 </div>

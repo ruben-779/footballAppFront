@@ -9,12 +9,12 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./view-players-team.component.css']
 })
 export class ViewPlayersTeamComponent implements OnInit {
-
+  teamId: any = this.route.snapshot.paramMap.get("teamId")
   players: Players[] = []
   cButton: boolean = false
   newPlayer: any = {
     id: "",
-    teamId: "",
+    teamId: this.teamId,
     "Nombre del Jugador": "",
     Avatar: ""
   }
@@ -24,6 +24,13 @@ export class ViewPlayersTeamComponent implements OnInit {
       this.cButton = true
     } else this.cButton = false
   }
+
+  createPlayer() {
+    this.playersService.createPlayer(this.newPlayer).then((res: Players) => this.players.push(res)
+    ).catch((err) => console.log(err)
+    )
+  }
+
 
   constructor(private playersService: PlayersService, private route: ActivatedRoute) {
 

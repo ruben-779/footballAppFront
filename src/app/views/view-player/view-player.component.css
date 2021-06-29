@@ -1,6 +1,6 @@
 .wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 75%;
 }
 
 p-card {
@@ -11,4 +11,10 @@ p-card {
 h1 {
   color: white;
   text-align: center;
+}
+label {
+  margin: 10px;
+}
+input {
+  margin: 4px;
 }

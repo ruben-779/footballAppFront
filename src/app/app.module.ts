@@ -16,7 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabMenuModule } from 'primeng/tabmenu'
+import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'primeng/api';
+import { CreatePlayerComponent } from './create-player/create-player.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +29,11 @@ import { SharedModule } from 'primeng/api';
     ViewTeamComponent,
     LeaguesComponent,
     ViewPlayersTeamComponent,
-    ViewTeamsLeagueComponent
+    ViewTeamsLeagueComponent,
+    CreatePlayerComponent,
+    CreateTeamComponent
   ],
   imports: [
-    NgModule,
     BrowserModule,
     AppRoutingModule,
     CardModule,
@@ -38,14 +42,10 @@ import { SharedModule } from 'primeng/api';
     MenubarModule,
     InputTextModule,
     TabMenuModule,
-    SharedModule
-
+    SharedModule,
+    FormsModule,
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],
-  schemas: [
-    NO_ERRORS_SCHEMA,
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
 })
 export class AppModule { }

@@ -1,0 +1,39 @@
+<p-card>
+  <div class="card">
+    <h1>Añadir Equipo</h1>
+
+    <div class="wrap">
+      <div class="input">
+        <label for="firstname6">Nombre del equipo</label>
+        <input
+          id="firstname6"
+          type="text"
+          [(ngModel)]="newTeam['Nombre del equipo']"
+          pInputText
+        />
+      </div>
+      <div class="input">
+        <label for="lastname6">Escudo del equipo</label>
+        <input
+          id="lastname6"
+          type="text"
+          [(ngModel)]="newTeam['Logo del Equipo']"
+          pInputText
+        />
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="lastname6">Selecciona el equipo</label>
+    <select [(ngModel)]="leagueName" name="Selecciona el equipo" id="">
+      <option
+        *ngFor="let league of leagues"
+        [value]="league['Nombre De La Liga']"
+      >
+        <p>{{ league["Nombre De La Liga"] }}</p>
+      </option>
+    </select>
+  </div>
+  <p></p>
+  <p-button label="Guardar" (click)="createTeam()"></p-button>
+</p-card>

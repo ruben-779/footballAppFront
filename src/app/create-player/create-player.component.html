@@ -1,0 +1,36 @@
+<p-card>
+  <div class="card">
+    <h1>Añadir jugador</h1>
+
+    <div class="wrap">
+      <div class="input">
+        <label for="firstname6">Nombre</label>
+        <input
+          id="firstname6"
+          type="text"
+          [(ngModel)]="newPlayer['Nombre del Jugador']"
+          pInputText
+        />
+      </div>
+      <div class="input">
+        <label for="lastname6">Avatar</label>
+        <input
+          id="lastname6"
+          type="text"
+          [(ngModel)]="newPlayer.Avatar"
+          pInputText
+        />
+      </div>
+    </div>
+  </div>
+  <div>
+    <label for="lastname6">Selecciona el equipo</label>
+    <select [(ngModel)]="teamName" name="Selecciona el equipo" id="">
+      <option *ngFor="let team of teams" [value]="team['Nombre del equipo']">
+        <p>{{ team["Nombre del equipo"] }}</p>
+      </option>
+    </select>
+  </div>
+  <p></p>
+  <p-button label="Guardar" (click)="createPlayer()"></p-button>
+</p-card>

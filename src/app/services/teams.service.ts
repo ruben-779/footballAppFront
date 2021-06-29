@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { Teams } from '../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,13 @@ export class TeamsService {
   getByLeague(leagueId: string) {
     return axios.get(this.apiURL + "teams?Liga=" + leagueId).then(res => res.data).catch(err => console.log(err)
     )
+  }
+  createTeam(team: Teams) {
+    return axios.post(this.apiURL + "teams/", team).then(res => res.data).catch(err => console.log(err)
+    )
+  }
+  editTeam(team: Teams, id: string) {
+    return axios.patch(this.apiURL + "teams/" + id, team).then(res => res).catch(err => console.log(err))
   }
   constructor() { }
 
