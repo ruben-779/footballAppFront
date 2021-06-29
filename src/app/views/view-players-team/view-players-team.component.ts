@@ -11,6 +11,19 @@ import { PlayersService } from 'src/app/services/players.service';
 export class ViewPlayersTeamComponent implements OnInit {
 
   players: Players[] = []
+  cButton: boolean = false
+  newPlayer: any = {
+    id: "",
+    teamId: "",
+    "Nombre del Jugador": "",
+    Avatar: ""
+  }
+
+  createButton() {
+    if (this.cButton == false) {
+      this.cButton = true
+    } else this.cButton = false
+  }
 
   constructor(private playersService: PlayersService, private route: ActivatedRoute) {
 

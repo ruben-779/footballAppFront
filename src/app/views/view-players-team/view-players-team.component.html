@@ -1,5 +1,29 @@
-<p>view-players-team works!</p>
-<div *ngFor="let player of players">
-  <div>{{ player["Nombre del Jugador"] }}</div>
-  <img [src]="player.Avatar" alt="" />
+<h1>Jugadores del equipo</h1>
+<p-button label="Añadir jugador al equipo" (click)="createButton()"></p-button>
+<div *ngIf="cButton == true">
+  <input
+    class="inputForm"
+    type="text"
+    [value]="newPlayer['Nombre del Jugador']"
+    [(ngModel)]="newPlayer['Nombre del Jugador']"
+    placeholder="John Doe"
+  />
+</div>
+<div class="wrap">
+  <p-card
+    [header]="player['Nombre del Jugador']"
+    [style]="{ width: '260px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+    *ngFor="let player of players"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="player.Avatar" />
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Mostrar mas..."
+        routerLink="/player/{{ player.id }}"
+      ></p-button>
+    </ng-template>
+  </p-card>
 </div>

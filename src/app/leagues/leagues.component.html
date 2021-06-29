@@ -1,8 +1,19 @@
-<p>leagues works!</p>
-<div *ngFor="let league of leagues">
-  <div>{{ league["Nombre De La Liga"] }}</div>
-  <img [src]="league['Logo de la Liga']" alt="" />
-  <button routerLink="/teams/{{ league.Identificador }}">
-    Mostrar equipos de la Liga
-  </button>
+<h1>Ligas de Futbol</h1>
+<div class="wrap">
+  <p-card
+    [header]="league['Nombre De La Liga']"
+    [style]="{ width: '250px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+    *ngFor="let league of leagues"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="league['Logo de la Liga']" />
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Mostrar equipos"
+        routerLink="/teams/{{ league.Identificador }}"
+      ></p-button>
+    </ng-template>
+  </p-card>
 </div>

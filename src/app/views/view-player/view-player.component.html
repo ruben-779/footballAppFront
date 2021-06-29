@@ -1,4 +1,13 @@
-<p>view-player works!</p>
-  <div>{{ player["Nombre del Jugador"] }}</div>
-  <img [src]="player.Avatar" alt="" />
+<h1>Jugador {{ player["Nombre del Jugador"] }}</h1>
+<div class="wrap">
+  <p-card
+    [header]="player['Nombre del Jugador']"
+    [style]="{ width: '260px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="player.Avatar" />
+    </ng-template>
+    <ng-template pTemplate="footer"> </ng-template>
+  </p-card>
 </div>

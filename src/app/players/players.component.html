@@ -1,5 +1,19 @@
-<p>players works!</p>
-<div *ngFor="let player of players" routerLink="/player/{{ player.id }}">
-  <img [src]="player.Avatar" alt="" />
-  <div>{{ player["Nombre del Jugador"] }}</div>
+<h1>Todos Jugadores</h1>
+<div class="wrap">
+  <p-card
+    [header]="player['Nombre del Jugador']"
+    [style]="{ width: '260px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+    *ngFor="let player of players"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="player.Avatar" />
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Mostrar mas..."
+        routerLink="/player/{{ player.id }}"
+      ></p-button>
+    </ng-template>
+  </p-card>
 </div>

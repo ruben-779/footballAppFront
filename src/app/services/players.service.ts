@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
+import { Players } from '../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,10 @@ export class PlayersService {
     return axios.get(this.apiURL + "players?teamId=" + teamId).then(res => res.data).catch(err => console.log(err)
     )
   }
+  createPlayer(player: Players) {
+    return axios.post(this.apiURL + "players/", player).then(res => res.data).catch(err => console.log(err)
+    )
+  }
   constructor() { }
 }
+

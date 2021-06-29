@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'footballApp';
+
+  items: MenuItem[] = [];
+  ngOnInit() {
+    this.items = [
+      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: "/" },
+      { label: 'Teams', icon: 'pi pi-fw pi-shield', routerLink: "/teams" },
+      { label: 'Players', icon: 'pi pi-fw pi-android', routerLink: "/players" },
+    ];
+  }
+
 }
 export interface Players {
   id: string,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Leagues } from '../app.component';
 import { LeaguesService } from '../services/leagues.service';
+import { PrimeNGConfig } from 'primeng/api';
+
 
 @Component({
   selector: 'app-leagues',
@@ -9,11 +11,12 @@ import { LeaguesService } from '../services/leagues.service';
 })
 export class LeaguesComponent implements OnInit {
   leagues: Leagues[] = []
-  constructor(private leaguesService: LeaguesService) {
+  constructor(private leaguesService: LeaguesService, private primengConfig: PrimeNGConfig) {
     this.leaguesService.getLeagues().then(res => this.leagues = res)
   }
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
   }
 
 }

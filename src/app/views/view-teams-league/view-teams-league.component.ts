@@ -6,7 +6,8 @@ import { TeamsService } from 'src/app/services/teams.service';
 @Component({
   selector: 'app-view-teams-league',
   templateUrl: './view-teams-league.component.html',
-  styleUrls: ['./view-teams-league.component.css']
+  styleUrls: ['./view-teams-league.component.css'],
+
 })
 export class ViewTeamsLeagueComponent implements OnInit {
   teams: Teams[] = []

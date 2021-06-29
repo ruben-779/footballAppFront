@@ -9,7 +9,7 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./view-player.component.css']
 })
 export class ViewPlayerComponent implements OnInit {
-  players: Players = {
+  player: Players = {
     id: "",
     "Nombre del Jugador": "",
     teamId: "",
@@ -22,8 +22,8 @@ export class ViewPlayerComponent implements OnInit {
   ngOnInit(): void {
     this.playersService.getByid(this.route.snapshot.paramMap.get("id") as string).then(res => {
 
-      this.players = res
-      console.log(this.players);
+      this.player = res
+      console.log(this.player);
 
     }).catch(err => console.log(err)
     )

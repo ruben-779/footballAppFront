@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +10,13 @@ import { ViewTeamComponent } from './views/view-team/view-team.component';
 import { LeaguesComponent } from './leagues/leagues.component';
 import { ViewPlayersTeamComponent } from './views/view-players-team/view-players-team.component';
 import { ViewTeamsLeagueComponent } from './views/view-teams-league/view-teams-league.component';
-
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { TabMenuModule } from 'primeng/tabmenu'
+import { SharedModule } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,10 +29,23 @@ import { ViewTeamsLeagueComponent } from './views/view-teams-league/view-teams-l
     ViewTeamsLeagueComponent
   ],
   imports: [
+    NgModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CardModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    MenubarModule,
+    InputTextModule,
+    TabMenuModule,
+    SharedModule
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppComponent],
+  bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA,
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class AppModule { }

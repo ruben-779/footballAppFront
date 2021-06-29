@@ -1,1 +1,19 @@
-<p>view-team works!</p>
+<h1>Equipo {{ team["Nombre del equipo"] }}</h1>
+
+<div class="wrap">
+  <p-card
+    [header]="team['Nombre del equipo']"
+    [style]="{ width: '260px', heigth: ' 300px' }"
+    styleClass="p-card-shadow"
+  >
+    <ng-template pTemplate="header">
+      <img alt="Card" [src]="team['Logo del Equipo']" />
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <p-button
+        label="Mostrar jugadores"
+        routerLink="/players/{{ team.id }}"
+      ></p-button>
+    </ng-template>
+  </p-card>
+</div>
