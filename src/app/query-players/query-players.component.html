@@ -1,18 +1,21 @@
+<div *ngIf="error == false"><h1>Jugadores encontrados</h1></div>
 <div *ngIf="error == true">
   <p-message severity="error" text="Jugador no encontrado"></p-message>
 </div>
-<div *ngFor="let player of players">
-  <h1>Jugador {{ player["Nombre del Jugador"] }}</h1>
-  <div class="wrap">
-    <p-card
-      [header]="player['Nombre del Jugador']"
-      [style]="{ width: '260px', heigth: ' 300px' }"
-      styleClass="p-card-shadow"
-    >
-      <ng-template pTemplate="header">
-        <img alt="Card" [src]="player.Avatar" />
-      </ng-template>
-      <ng-template pTemplate="footer"> </ng-template>
-    </p-card>
+
+<div class="wrap">
+  <div *ngFor="let player of players">
+    <div class="wrap">
+      <p-card
+        [header]="player['Nombre del Jugador']"
+        [style]="{ width: '260px', heigth: ' 300px' }"
+        styleClass="p-card-shadow"
+      >
+        <ng-template pTemplate="header">
+          <img alt="Card" [src]="player.Avatar" />
+        </ng-template>
+        <ng-template pTemplate="footer"> </ng-template>
+      </p-card>
+    </div>
   </div>
 </div>

@@ -28,7 +28,7 @@ export class TeamsService {
     return axios.delete(this.apiURL + "teams/" + id).then(res => res.data).catch(err => console.log(err))
   }
   getNameTeam(name: string) {
-    return axios.get(this.apiURL + "teams?Nombre%20del%20equipo=" + name).then(res => res.data).catch(err => console.log(err))
+    return axios.get(this.apiURL + "teams?Nombre%20del%20equipo_like=" + name).then(res => res.data).catch(err => console.log(err))
   }
   constructor() { }
 

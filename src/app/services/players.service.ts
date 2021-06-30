@@ -31,7 +31,7 @@ export class PlayersService {
     return axios.delete(this.apiURL + "players/" + id).then(res => res.data).catch(err => console.log(err))
   }
   getByName(name: string) {
-    return axios.get(this.apiURL + "players?Nombre%20del%20Jugador=" + name).then(res => res.data).catch(err => console.log(err))
+    return axios.get(this.apiURL + "players?Nombre%20del%20Jugador_like=" + name).then(res => res.data).catch(err => console.log(err))
   }
   constructor() { }
 }
