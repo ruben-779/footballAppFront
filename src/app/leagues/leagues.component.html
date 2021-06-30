@@ -8,12 +8,13 @@
         pRipple
         label="Buscar"
       ></button>
-      <input
-        type="text"
-        pInputText
+
+      <p-autoComplete
+        placeholder="Nombre de jugador"
         [(ngModel)]="nameQuery"
-        placeholder="Buscar por nombre de jugador"
-      />
+        [suggestions]="results"
+        (completeMethod)="search($event)"
+      ></p-autoComplete>
     </div>
   </div>
   <div class="p-col-12 p-md-4">
@@ -25,12 +26,13 @@
         pRipple
         label="Buscar"
       ></button>
-      <input
-        type="text"
-        pInputText
+
+      <p-autoComplete
+        placeholder="Nombre del equipo"
         [(ngModel)]="teamQuery"
-        placeholder="Buscar por nombre del equipo"
-      />
+        [suggestions]="results"
+        (completeMethod)="searchT($event)"
+      ></p-autoComplete>
     </div>
   </div>
 </div>

@@ -24,7 +24,7 @@ import { QueryPlayersComponent } from './query-players/query-players.component';
 import { QueryPlayersByTeamComponent } from './query-players-by-team/query-players-by-team.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-import { SkeletonModule } from 'primeng/skeleton';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -54,9 +54,7 @@ import { SkeletonModule } from 'primeng/skeleton';
     FormsModule,
     MessageModule,
     MessagesModule,
-    SkeletonModule
-
-
+    AutoCompleteModule,
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent],
