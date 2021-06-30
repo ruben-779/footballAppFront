@@ -38,8 +38,22 @@ export class ViewPlayerComponent implements OnInit {
   constructor(private playersService: PlayersService, private teamsService: TeamsService, private route: ActivatedRoute) {
     this.playersService.getByid(this.route.snapshot.paramMap.get("id") as string).then(res => {
 
+
       this.player = res
 
+      this.teamsService.getAllTeams().then(res => {
+
+        this.teams = res
+        this.teams.forEach(team => {
+          console.log(this.player.teamId);
+
+          if (this.player.teamId == team.id) {
+            this.actualTeam = team['Nombre del equipo']
+            console.log(this.actualTeam)
+          }
+        })
+      }).catch(err => console.log(err)
+      )
     }).catch(err => console.log(err)
     )
 
@@ -47,19 +61,6 @@ export class ViewPlayerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.teamsService.getAllTeams().then(res => {
-
-      this.teams = res
-      this.teams.forEach(team => {
-        console.log(this.player.teamId);
-
-        if (this.player.teamId == team.id) {
-          this.actualTeam = team['Nombre del equipo']
-          console.log(this.actualTeam)
-        }
-      })
-    }).catch(err => console.log(err)
-    )
 
   }
 

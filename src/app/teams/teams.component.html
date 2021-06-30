@@ -1,22 +1,24 @@
 <h1>Todos los equipos</h1>
 
 <div class="wrap">
-  <p-card
-    [header]="team['Nombre del equipo']"
-    [style]="{ width: '260px', heigth: ' 300px' }"
-    styleClass="p-card-shadow"
-    *ngFor="let team of teams"
-  >
-    <ng-template pTemplate="header">
-      <img alt="Card" [src]="team['Logo del Equipo']" />
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <p-button
-        label="Mostrar jugadores"
-        routerLink="/players/{{ team.id }}"
-      ></p-button>
-      <p></p>
-      <p-button label="Editar" routerLink="/team/{{ team.id }}"></p-button>
-    </ng-template>
-  </p-card>
+  <div *ngFor="let team of teams">
+    <p-card
+      [header]="team['Nombre del equipo']"
+      [style]="{ width: '260px', heigth: ' 300px' }"
+      styleClass="p-card-shadow"
+    >
+      <div *ngIf=""></div>
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="team['Logo del Equipo']" />
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <p-button
+          label="Mostrar jugadores"
+          routerLink="/players/{{ team.id }}"
+        ></p-button>
+        <p></p>
+        <p-button label="Editar" routerLink="/team/{{ team.id }}"></p-button>
+      </ng-template>
+    </p-card>
+  </div>
 </div>

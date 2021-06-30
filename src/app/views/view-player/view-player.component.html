@@ -8,7 +8,9 @@
     <ng-template pTemplate="header">
       <img alt="Card" [src]="player.Avatar" />
     </ng-template>
-    <ng-template pTemplate="footer"> </ng-template>
+    <ng-template pTemplate="footer">
+      Su equipo actual es {{ actualTeam }}
+    </ng-template>
   </p-card>
 
   <p-card header="Editar Jugador" styleClass="p-card-shadow">

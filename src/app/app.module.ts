@@ -24,6 +24,8 @@ import { QueryPlayersComponent } from './query-players/query-players.component';
 import { QueryPlayersByTeamComponent } from './query-players-by-team/query-players-by-team.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { SkeletonModule } from 'primeng/skeleton';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,9 @@ import { MessageModule } from 'primeng/message';
     SharedModule,
     FormsModule,
     MessageModule,
-    MessagesModule
+    MessagesModule,
+    SkeletonModule
+
 
   ],
   providers: [AppComponent],
